@@ -30,5 +30,8 @@ class StringCalculatorShould {
 	public void handleNewLineBetweenNumbers() {
 		assertEquals(4+8+60, stringCalculator.add("4,8\n60"));
 	}
+	public void supportDifferentDelimiter() {
+		assertEquals(4+8+60, stringCalculator.add("//;n4;8;60"));
+	}
 	
 }
