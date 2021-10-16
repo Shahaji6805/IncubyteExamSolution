@@ -3,15 +3,15 @@ package calculator;
 class StringCalculator {
 
 	public int add(String input) {
-		int returnValue = 0;
-		String[] numbersArray = input.split(",");
+		int returnVal = 0;
+		String[] numArr= input.split(",");
 		
-		for (String number : numbersArray) {
+		for (String number : numArr) {
 			if (!number.trim().isEmpty()) { 
-				returnValue += Integer.parseInt(number);
+				returnVal += Integer.parseInt(number);
 			}
 		}
-		return returnValue;
+		return returnVal;
 
 	}
 
