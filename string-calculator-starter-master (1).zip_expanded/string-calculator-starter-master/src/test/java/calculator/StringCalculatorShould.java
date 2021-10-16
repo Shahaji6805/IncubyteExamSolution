@@ -22,16 +22,32 @@ class StringCalculatorShould {
 	public void commaSepratedTwoNumbersReturnsSum() {
 		assertEquals(9 + 5, stringCalculator.add("9,5"));
 	}
-	
+
+	@Test
 	public void handlingOfUnknownAmountOfNumbers() {
-		assertEquals(3+7+18+45+33+88,stringCalculator.add("3,7,18,45,33,88"));
+		assertEquals(3 + 7 + 18 + 45 + 33 + 88, stringCalculator.add("3,7,18,45,33,88"));
 	}
-	
+
+	@Test
 	public void handleNewLineBetweenNumbers() {
-		assertEquals(4+8+60, stringCalculator.add("4,8\n60"));
+		assertEquals(4 + 8 + 60, stringCalculator.add("4,8\n60"));
 	}
+
+	@Test
 	public void supportDifferentDelimiter() {
-		assertEquals(4+8+60, stringCalculator.add("//;n4;8;60"));
+		assertEquals(1 + 2, stringCalculator.add("//;\\n1;2"));
 	}
-	
+
+	@Test
+	public void negativeNumbersAreUsedThenRuntimeExceptionIsThrow() {
+		RuntimeException exception = null;
+		try {
+			stringCalculator.add("3,-6,15,-18,46,33");
+		} catch (RuntimeException e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		
+	}
+
 }
