@@ -71,5 +71,10 @@ class StringCalculatorShould {
 
 		assertEquals(6, stringCalculator.add("//[*][%]\n1*2%3"));
 	}
+	@Test
+	public void handleMultipleDelimitersWithLengthLongerThanOneChar() {
+		
+		assertEquals(6,stringCalculator.add("//[**][%%]\n1**2%%3"));
+	}
 
 }
