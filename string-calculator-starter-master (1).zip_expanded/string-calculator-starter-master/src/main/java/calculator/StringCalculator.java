@@ -4,7 +4,7 @@ class StringCalculator {
 
 	public int add(String input) {
 		int returnVal = 0;
-		String[] numArr= input.split(", |");
+		String[] numArr= input.split(",|\n");
 		
 		for (String number : numArr) {
 			if (!number.trim().isEmpty()) { 
