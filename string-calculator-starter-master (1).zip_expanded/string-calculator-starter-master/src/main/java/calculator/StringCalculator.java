@@ -35,8 +35,9 @@ class StringCalculator {
 	            int numberInt = Integer.parseInt(number.trim());
 	            if (numberInt < 0) {
 	                negativeNumbers.add(numberInt);
-	            }
+	            }else if (numberInt <= 1000) {
 	            returnValue += numberInt;
+	            }
 	        }
 	    }
 	    if (negativeNumbers.size() > 0) {

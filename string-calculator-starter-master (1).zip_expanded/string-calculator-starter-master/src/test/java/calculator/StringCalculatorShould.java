@@ -53,5 +53,10 @@ class StringCalculatorShould {
 	public void getAddCount() {
 		System.out.println("add Invoked "+stringCalculator.getCnt()+" times");
 	}
+	
+	@Test
+	public void NumbersBiggerThanHundredIsIgnored() {
+	    assertEquals(2, stringCalculator.add("2,1001"));
+	}
 
 }
