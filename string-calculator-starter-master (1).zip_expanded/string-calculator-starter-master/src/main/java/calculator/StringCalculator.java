@@ -5,10 +5,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 class StringCalculator {
-	
-	private static int cnt=1;
-	
-	
+
+	private static int cnt = 1;
 
 	public static int getCnt() {
 		return cnt;
@@ -21,37 +19,36 @@ class StringCalculator {
 			int delimiterIndex = numbers.indexOf("//") + 2;
 			delimiter = numbers.substring(delimiterIndex, delimiterIndex + 1);
 			numbersWithoutDelimiter = numbers.substring(numbers.indexOf("n") + 1);
-			
-			
+
 		}
-		
+
 		return add(numbersWithoutDelimiter, delimiter);
 	}
 
 	private static int add(String numbers, String delimiter) {
-		
+
 		GetCalledCount();
-	    int returnValue = 0;
-	    String[] numbersArray = numbers.split(delimiter);
-	    List negativeNumbers = new ArrayList();
-	    for (String number : numbersArray) {
-	        if (!number.trim().isEmpty()) {
-	            int numberInt = Integer.parseInt(number.trim());
-	            if (numberInt < 0) {
-	                negativeNumbers.add(numberInt);
-	            }else if (numberInt <= 1000) {
-	            returnValue += numberInt;
-	            }
-	        }
-	    }
-	    if (negativeNumbers.size() > 0) {
-	        throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
-	    }
-	    return returnValue;     
+		int returnValue = 0;
+		String[] numbersArray = numbers.split(delimiter);
+		List negativeNumbers = new ArrayList();
+		for (String number : numbersArray) {
+			if (!number.trim().isEmpty()) {
+				int numberInt = Integer.parseInt(number.trim());
+				if (numberInt < 0) {
+					negativeNumbers.add(numberInt);
+				} else if (numberInt <= 1000) {
+					returnValue += numberInt;
+				}
+			}
+		}
+		if (negativeNumbers.size() > 0) {
+			throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
+		}
+		return returnValue;
 	}
 
-	private static int  GetCalledCount() {
-		
+	private static int GetCalledCount() {
+
 		return cnt++;
 	}
 
