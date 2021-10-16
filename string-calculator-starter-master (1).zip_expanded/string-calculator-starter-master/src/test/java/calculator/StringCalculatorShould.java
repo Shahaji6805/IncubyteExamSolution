@@ -19,7 +19,14 @@ class StringCalculatorShould {
 	}
 
 	@Test
-	public final void CommaSepratedTwoNumbersReturnsSum() {
-		assertEquals(3 + 6, stringCalculator.add("3,6"));
+	public void commaSepratedTwoNumbersReturnsSum() {
+		assertEquals(9 + 5, stringCalculator.add("9,5"));
 	}
+	
+	public void handlingOfUnknownAmountOfNumbers() {
+		assertEquals(3+7+18+45+33+88,stringCalculator.add("3,7,18,45,33,88"));
+	}
+	
+	
+	
 }
