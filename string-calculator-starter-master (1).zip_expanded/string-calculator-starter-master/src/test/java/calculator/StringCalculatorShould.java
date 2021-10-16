@@ -49,5 +49,9 @@ class StringCalculatorShould {
 		assertNotNull(exception);
 		assertEquals("Negatives not allowed: [-9, -78]", exception.getMessage());
 	}
+	@Test
+	public void getAddCount() {
+		System.out.println("add Invoked "+stringCalculator.getCnt()+" times");
+	}
 
 }

@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 class StringCalculator {
+	
+	private static int cnt=1;
+	
+	
+
+	public static int getCnt() {
+		return cnt;
+	}
 
 	public int add(final String numbers) {
 		String delimiter = ",|\n";
@@ -17,6 +25,8 @@ class StringCalculator {
 	}
 
 	private static int add(String numbers, String delimiter) {
+		
+		GetCalledCount();
 	    int returnValue = 0;
 	    String[] numbersArray = numbers.split(delimiter);
 	    List negativeNumbers = new ArrayList();
@@ -33,6 +43,11 @@ class StringCalculator {
 	        throw new RuntimeException("Negatives not allowed: " + negativeNumbers.toString());
 	    }
 	    return returnValue;     
+	}
+
+	private static int  GetCalledCount() {
+		
+		return cnt++;
 	}
 
 }
