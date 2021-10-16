@@ -2,6 +2,7 @@ package calculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 class StringCalculator {
 	
@@ -20,7 +21,10 @@ class StringCalculator {
 			int delimiterIndex = numbers.indexOf("//") + 2;
 			delimiter = numbers.substring(delimiterIndex, delimiterIndex + 1);
 			numbersWithoutDelimiter = numbers.substring(numbers.indexOf("n") + 1);
+			
+			
 		}
+		
 		return add(numbersWithoutDelimiter, delimiter);
 	}
 

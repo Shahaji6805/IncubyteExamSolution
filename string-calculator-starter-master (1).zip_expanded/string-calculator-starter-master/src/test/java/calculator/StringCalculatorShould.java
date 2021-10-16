@@ -49,14 +49,22 @@ class StringCalculatorShould {
 		assertNotNull(exception);
 		assertEquals("Negatives not allowed: [-9, -78]", exception.getMessage());
 	}
+
 	@Test
 	public void getAddCount() {
-		System.out.println("add Invoked "+stringCalculator.getCnt()+" times");
+		System.out.println("add Invoked " + stringCalculator.getCnt() + " times");
 	}
-	
+
 	@Test
 	public void NumbersBiggerThanHundredIsIgnored() {
-	    assertEquals(2, stringCalculator.add("2,1001"));
+		assertEquals(2, stringCalculator.add("2,1001"));
 	}
+
+	@Test
+	public void delimitCanBeOfAnyLength() {
+		
+		assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+	}
+	
 
 }
