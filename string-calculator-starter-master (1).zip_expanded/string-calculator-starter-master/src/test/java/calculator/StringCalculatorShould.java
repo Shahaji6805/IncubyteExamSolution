@@ -42,12 +42,12 @@ class StringCalculatorShould {
 	public void negativeNumbersAreUsedThenRuntimeExceptionIsThrow() {
 		RuntimeException exception = null;
 		try {
-			stringCalculator.add("3,-6,15,-18,46,33");
+			stringCalculator.add("4,-9,34,-78,22,18");
 		} catch (RuntimeException e) {
 			exception = e;
 		}
 		assertNotNull(exception);
-		
+		assertEquals("Negatives not allowed: [-9, -78]", exception.getMessage());
 	}
 
 }
